@@ -1,0 +1,89 @@
+<html><head>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&amp;display=block" rel="stylesheet">
+  <link as="style" href="https://d33wubrfki0l68.cloudfront.net/css/709fa2dcbe357e6e1a623b046182bcc47e12ed00/styles.css" rel="preload">
+  <link href="https://d33wubrfki0l68.cloudfront.net/css/709fa2dcbe357e6e1a623b046182bcc47e12ed00/styles.css" rel="stylesheet">
+</head>
+<body>
+  <div id="grid-container" class="grid-container"><a href="https://pay.harker.org" target="_blank" class="grid-item"><img src="img/pay.svg" width="40" height="40"><div class="grid-item-title">Harker Pay</div></a><a href="https://announcements.harker.org" target="_blank" class="grid-item"><img src="img/announcements.svg" width="40" height="40"><div class="grid-item-title">Announce-ments</div></a><a href="https://volunteering.harker.org" target="_blank" class="grid-item"><img src="img/volunteering.svg" width="40" height="40"><div class="grid-item-title">Volunteering</div></a><a href="https://spirit.harker.org" target="_blank" class="grid-item"><img src="img/spirit.svg" width="40" height="40"><div class="grid-item-title">Spirit</div></a><a href="https://planner.harker.org" target="_blank" class="grid-item"><img src="img/planner.svg" width="40" height="40"><div class="grid-item-title">Course Planner</div></a><a href="https://dev.harker.org" target="_blank" class="grid-item"><img src="img/harkerdev.svg" width="40" height="40"><div class="grid-item-title">HarkerDev Website</div></a><a href="https://harkerdev.github.io/harker-gpa" target="_blank" class="grid-item"><img src="img/gpa.svg" width="40" height="40"><div class="grid-item-title">GPA Calculator</div></a><a href="https://harkerdev.statuspage.io" target="_blank" class="grid-item"><img src="img/status.svg" width="40" height="40"><div class="grid-item-title">Service Status</div></a></div>
+  <script>
+    var items = [
+    {
+      id: "pay",
+      name: "Harker Pay",
+      logo: "img/pay.svg",
+      url: "https://pay.harker.org",
+    },
+    {
+      id: "bell",
+      name: "Bell Schedule",
+      logo: "img/bell.svg",
+      url: "https://bell.harker.org",
+    },
+    {
+      id: "announcements",
+      name: "Announce-ments",
+      logo: "img/announcements.svg",
+      url: "https://announcements.harker.org",
+    },
+    {
+      id: "volunteering",
+      name: "Volunteering",
+      logo: "img/volunteering.svg",
+      url: "https://volunteering.harker.org",
+    },
+    {
+      id: "spirit",
+      name: "Spirit",
+      logo: "img/spirit.svg",
+      url: "https://spirit.harker.org",
+    },
+    {
+      id: "planner",
+      name: "Course Planner",
+      logo: "img/planner.svg",
+      url: "https://planner.harker.org",
+    },
+    {
+      id: "website",
+      name: "HarkerDev Website",
+      logo: "img/harkerdev.svg",
+      url: "https://dev.harker.org",
+    },
+    {
+      id: "gpa",
+      name: "GPA Calculator",
+      logo: "img/gpa.svg",
+      url: "https://harkerdev.github.io/harker-gpa",
+    },
+    {
+      id: "status",
+      name: "Service Status",
+      logo: "img/status.svg",
+      url: "https://harkerdev.statuspage.io",
+    },
+  ];
+  var params = window.location.search.substring(1).split("&");
+  var exclude = null;
+  for (var i = 0; i < params.length; i++) {
+    var pair = params[i].split("=");
+    if (pair[0] == "exclude") exclude = pair[1];
+  }
+  for (var i = 0; i < items.length; i++) {
+    var item = items[i];
+    if (item.id == exclude) continue;
+    var a = document.createElement("a");
+    a.href = item.url;
+    a.target = "_blank";
+    a.className = "grid-item";
+    var img = document.createElement("img");
+    img.src = item.logo;
+    img.height = img.width = 40;
+    a.appendChild(img);
+    var div = document.createElement("div");
+    div.className = "grid-item-title";
+    div.innerText = item.name;
+    a.appendChild(div);
+    document.getElementById("grid-container").appendChild(a);
+  }
+  </script>
+</body></html>
