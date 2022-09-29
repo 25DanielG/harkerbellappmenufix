@@ -1,0 +1,16 @@
+body{
+        background-color:black;max-width:300px;margin:0;font-family:"Lexend Deca","Google Sans","Product Sans",Gilroy,Roboto,sans-serif;font-size:13px;color:#ffffff
+    }a{
+        text-decoration:none;color:inherit
+    }.grid-container{
+        display:flex;flex-wrap:wrap
+    }.grid-item{
+        width:90px;height:90px;text-align:center;padding:6px 0 0;margin:4px 5px 0
+    }.grid-item-title{
+        margin-top:4px
+    }.grid-item{
+        border-radius:2px;transition:background-color .1s
+    }.grid-item:hover{
+        background-color:rgba(0,0,0,.00);transition:background-color .1s
+    }.grid-item:active{
+        background-color:rgb(0, 0, 0);box-shadow:0 8px 16px 0 rgba(0,0,0,.05);transition:background-color 50ms,box-shadow 50ms}
