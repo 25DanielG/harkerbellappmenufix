@@ -71,9 +71,7 @@
     if (pair[0] == "theme_dark") theme_dark = pair[1];
   }
   if(theme_dark === "true") {
-    var sheets = document.getElementsByTagName('link');
-    sheets[1].href = "css/dark_stylesheet";
-    sheets[2].href = "css/dark_stylesheet";
+    toggleDarkStyle("css/dark_stylesheet.css");
   }
   for (var i = 0; i < items.length; i++) {
     var item = items[i];
@@ -91,6 +89,11 @@
     div.innerText = item.name;
     a.appendChild(div);
     document.getElementById("grid-container").appendChild(a);
+  }
+  function toggleDarkStyle(val) {
+    var sheets = document.getElementsByTagName('link');
+    sheets[1].href = val;
+    sheets[2].href = val;
   }
   </script>
 </body></html>
