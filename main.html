@@ -72,7 +72,9 @@
   }
   if(theme_dark === "true") {
     console.log("Toggled dark theme");
-    toggleTheme('css/dark_stylesheet.css');
+    var sheets = document.getElementsByTagName('link');
+    sheets[1].href = "css/dark_stylesheet";
+    sheets[2].href = "css/dark_stylesheet";
   }
   for (var i = 0; i < items.length; i++) {
     var item = items[i];
@@ -90,11 +92,6 @@
     div.innerText = item.name;
     a.appendChild(div);
     document.getElementById("grid-container").appendChild(a);
-  }
-  function toggleTheme(value) {
-    var sheets = document.getElementsByTagName('link');
-    sheets[1].href = value;
-    sheets[2].href = value;
   }
   </script>
 </body></html>
