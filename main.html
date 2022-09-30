@@ -71,7 +71,6 @@
     if (pair[0] == "theme_dark") theme_dark = pair[1];
   }
   if(theme_dark === "true") {
-    console.log("Toggled dark theme");
     var sheets = document.getElementsByTagName('link');
     sheets[1].href = "css/dark_stylesheet";
     sheets[2].href = "css/dark_stylesheet";
